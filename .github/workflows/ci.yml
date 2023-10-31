@@ -5,7 +5,7 @@ on:
     types: [opened, synchronize]
 
 jobs:
-  build:
+  CI-steps:
     name: Build, Test and Lint
     timeout-minutes: 15
     runs-on: ubuntu-latest

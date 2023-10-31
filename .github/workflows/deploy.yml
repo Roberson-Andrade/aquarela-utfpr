@@ -9,7 +9,7 @@ on:
     types: created
 
 jobs:
-  Identify-deploy:
+  Deploy:
     runs-on: ubuntu-latest
     steps:
       - name: Check out code
