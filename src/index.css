@@ -1,3 +1,10 @@
 @tailwind base;
+
+*,
+*::after,
+*::before {
+	@apply text-primary-950;
+	font-family: Coiny, sans-serif;
+}
 @tailwind components;
 @tailwind utilities;
