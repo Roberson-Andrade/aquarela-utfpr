@@ -5,6 +5,7 @@
 *::before {
 	@apply text-primary-950;
 	font-family: Coiny, sans-serif;
+	outline: none;
 }
 @tailwind components;
 @tailwind utilities;

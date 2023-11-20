@@ -1,13 +1,19 @@
 import { createBrowserRouter } from 'react-router-dom';
 import { Home } from './pages/Home';
+import { ROUTES } from './utils/router';
+import { InGame } from './pages/InGame';
 
 export const router = createBrowserRouter([
 	{
-		path: '/',
+		path: ROUTES.HOME,
 		element: <Home />,
 	},
 	{
-		path: '/relatorios',
+		path: ROUTES.REPORTS,
 		element: <div>relatorios</div>,
+	},
+	{
+		path: ROUTES.IN_GAME,
+		element: <InGame />,
 	},
 ]);

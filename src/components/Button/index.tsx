@@ -1,13 +1,14 @@
 import { ButtonHTMLAttributes } from 'react';
+import { button } from './styles';
+import { VariantProps } from 'tailwind-variants';
 
-interface ButtonProperties extends ButtonHTMLAttributes<HTMLButtonElement> {}
+interface ButtonProperties
+	extends ButtonHTMLAttributes<HTMLButtonElement>,
+		VariantProps<typeof button> {}
 
-export function Button({ children, ...props }: ButtonProperties) {
+export function Button({ children, variant = 'primary', ...props }: ButtonProperties) {
 	return (
-		<button
-			className="px-6 pb-2 bg-primary-400 border-2 border-primary-500 border-solid rounded-2xl text-white [-webkit-text-stroke:1px_#0eaae9] text-3xl hover:bg-primary-500 transition-colors active:bg-primary-600 active:border-primary-600"
-			{...props}
-		>
+		<button className={button({ variant })} {...props}>
 			{children}
 		</button>
 	);
