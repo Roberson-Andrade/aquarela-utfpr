@@ -6,9 +6,9 @@ interface ButtonProperties
 	extends ButtonHTMLAttributes<HTMLButtonElement>,
 		VariantProps<typeof button> {}
 
-export function Button({ children, variant = 'primary', ...props }: ButtonProperties) {
+export function Button({ children, className, variant = 'primary', ...props }: ButtonProperties) {
 	return (
-		<button className={button({ variant })} {...props}>
+		<button className={button({ variant, className })} {...props}>
 			{children}
 		</button>
 	);
