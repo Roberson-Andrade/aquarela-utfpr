@@ -1,7 +1,7 @@
 import { tv } from 'tailwind-variants';
 
 export const button = tv({
-	base: 'px-6 pb-2 bg-primary-400 border-2 border-primary-500 border-solid rounded-2xl text-3xl  transition-colors',
+	base: 'px-6 py-2 bg-primary-400 border-2 border-primary-500 border-solid rounded-2xl text-3xl  transition-colors',
 	variants: {
 		variant: {
 			primary:

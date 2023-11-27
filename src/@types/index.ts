@@ -10,3 +10,12 @@ export enum GameAnswerOptions {
 	GREEN = 'GREEN',
 	YELLOW = 'YELLOW',
 }
+
+export interface GameReport {
+	name: string;
+	date: string;
+	[GameAnswerOptions.BLUE]: number;
+	[GameAnswerOptions.RED]: number;
+	[GameAnswerOptions.GREEN]: number;
+	[GameAnswerOptions.YELLOW]: number;
+}

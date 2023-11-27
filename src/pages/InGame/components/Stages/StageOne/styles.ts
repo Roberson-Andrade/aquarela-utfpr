@@ -8,7 +8,7 @@ export const stageOneQuestion = tv({
 			[GameAnswerOptions.BLUE]: 'bg-[blue]',
 			[GameAnswerOptions.RED]: 'bg-[red]',
 			[GameAnswerOptions.GREEN]: 'bg-[green]',
-			[GameAnswerOptions.YELLOW]: 'bg-[yellow]',
+			[GameAnswerOptions.YELLOW]: 'bg-[yellow] text-primary-950',
 		},
 	},
 });

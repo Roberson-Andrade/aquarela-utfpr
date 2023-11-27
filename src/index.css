@@ -4,7 +4,7 @@
 *::after,
 *::before {
 	@apply text-primary-950;
-	font-family: Coiny, sans-serif;
+	font-family: Coiny, sans-serif !important;
 	outline: none;
 }
 @tailwind components;
