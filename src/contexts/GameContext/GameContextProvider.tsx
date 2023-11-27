@@ -1,7 +1,6 @@
 import { ReactNode, useCallback, useMemo, useState } from 'react';
 import { GameStage } from '../../@types';
 import { CurrentGameInfo, GameContext, GameContextProps, GameHistory } from './context';
-import { getNoNRepeatedRandomAnswer } from '../../utils/getRandomOption';
 import { MAX_ROUNDS } from '../../constants';
 
 interface GameContextProviderProps {
@@ -12,36 +11,36 @@ export function GameContextProvider({ children }: GameContextProviderProps) {
 	const [currentGameInfo, setCurrentGameInfo] = useState<CurrentGameInfo>({
 		stage: GameStage.STAGE_ONE,
 		round: 1,
-		correctAnswer: getNoNRepeatedRandomAnswer([]),
 	});
 	const [history, setHistory] = useState<GameHistory[]>([]);
 
 	function changeStage(stage: GameStage) {
-		setCurrentGameInfo((prevState) => ({ ...prevState, stage: stage }));
+		setCurrentGameInfo((prevState) => ({ ...prevState, stage: stage, round: 1 }));
 	}
 
 	function addHistory(newHistory: GameHistory) {
 		setHistory((prevHistory) => [...prevHistory, newHistory]);
 	}
 
-	const goToNextRound = useCallback(
-		(stage: GameStage, round: number) => {
-			if (round < MAX_ROUNDS) {
-				const currentStageHistory = history.filter((historyItem) => historyItem.stage === stage);
-				const usedAnwsers = currentStageHistory.map((historyItem) => historyItem.correctAnswer);
+	const goToNextRound = useCallback((round: number): number | undefined => {
+		if (round < MAX_ROUNDS) {
+			setCurrentGameInfo((prevState) => ({
+				...prevState,
+				round: round + 1,
+			}));
+			return round + 1;
+		}
+	}, []);
 
-				setCurrentGameInfo((prevState) => ({
-					...prevState,
-					round: round + 1,
-					correctAnswer: getNoNRepeatedRandomAnswer(usedAnwsers),
-				}));
-			}
-		},
-		[history],
-	);
+	function changeGameStage(stage: GameStage) {
+		setCurrentGameInfo({
+			round: 1,
+			stage,
+		});
+	}
 
 	const value = useMemo<GameContextProps>(
-		() => ({ changeStage, currentGameInfo, history, goToNextRound, addHistory }),
+		() => ({ changeStage, currentGameInfo, history, changeGameStage, goToNextRound, addHistory }),
 		[currentGameInfo, goToNextRound, history],
 	);
 

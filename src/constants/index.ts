@@ -2,6 +2,7 @@ import { GameAnswerOptions, GameStage } from '../@types';
 
 export const GAME_STAGE_NUMBER: Record<GameStage, number> = {
 	[GameStage.STAGE_ONE]: 1,
+	[GameStage.STAGE_TWO]: 2,
 };
 
 export const MAX_ROUNDS = Object.keys(GameAnswerOptions).length;
@@ -40,4 +41,11 @@ export const ALTERNATIVE_LABEL: Record<GameAnswerOptions, string> = {
 	[GameAnswerOptions.RED]: 'VERMELHO',
 	[GameAnswerOptions.GREEN]: 'VERDE',
 	[GameAnswerOptions.YELLOW]: 'AMARELO',
+};
+
+export const STAGE_TWO_OPTIONS: Record<GameAnswerOptions, string[]> = {
+	BLUE: ['blue-cap', 'blue-dolphin', 'blue-fish', 'blue-ice'],
+	GREEN: ['green-apple', 'green-tree', 'green-turtle', 'green-weed'],
+	RED: ['red-baloon', 'red-book', 'red-pin', 'red-apple'],
+	YELLOW: ['yellow-star', 'yellow-sun', 'yellow-warning', 'yellow-chick'],
 };

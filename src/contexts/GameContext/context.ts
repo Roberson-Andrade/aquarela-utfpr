@@ -3,7 +3,6 @@ import { GameAnswerOptions, GameStage } from '../../@types';
 export interface CurrentGameInfo {
 	stage: GameStage;
 	round: number;
-	correctAnswer: GameAnswerOptions;
 }
 
 export interface GameHistory {
@@ -18,7 +17,8 @@ export interface GameContextProps {
 	currentGameInfo: CurrentGameInfo;
 	addHistory: (newHistory: GameHistory) => void;
 	changeStage: (step: GameStage) => void;
-	goToNextRound: (stage: GameStage, round: number) => void;
+	goToNextRound: (round: number) => number | undefined;
+	changeGameStage: (stage: GameStage) => void;
 }
 
 export const GameContext = createContext<GameContextProps | undefined>(undefined);
