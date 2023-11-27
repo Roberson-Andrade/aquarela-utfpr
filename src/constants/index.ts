@@ -3,6 +3,7 @@ import { GameAnswerOptions, GameStage } from '../@types';
 export const GAME_STAGE_NUMBER: Record<GameStage, number> = {
 	[GameStage.STAGE_ONE]: 1,
 	[GameStage.STAGE_TWO]: 2,
+	[GameStage.DONE]: 3,
 };
 
 export const MAX_ROUNDS = Object.keys(GameAnswerOptions).length;
