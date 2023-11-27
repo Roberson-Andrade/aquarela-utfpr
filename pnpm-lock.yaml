@@ -8,9 +8,6 @@ dependencies:
   '@phosphor-icons/react':
     specifier: ^2.0.14
     version: 2.0.14(react-dom@18.2.0)(react@18.2.0)
-  '@types/react-beautiful-dnd':
-    specifier: ^13.1.7
-    version: 13.1.7
   react:
     specifier: ^18.2.0
     version: 18.2.0
@@ -31,6 +28,9 @@ devDependencies:
   '@types/react':
     specifier: ^18.2.15
     version: 18.2.33
+  '@types/react-beautiful-dnd':
+    specifier: ^13.1.7
+    version: 13.1.7
   '@types/react-dom':
     specifier: ^18.2.7
     version: 18.2.14
@@ -689,7 +689,7 @@ packages:
     resolution: {integrity: sha512-jQZLov9OkD0xRQkqz8/lx66bHYAYv+g4+POBqnH5Jtt/xo4MygzM879Q9sxAiosPBdNj1JYTdbPxDn3dNRYgow==}
     dependencies:
       '@types/react': 18.2.33
-    dev: false
+    dev: true
 
   /@types/react-dom@18.2.14:
     resolution: {integrity: sha512-V835xgdSVmyQmI1KLV2BEIUgqEuinxp9O4G6g3FqO/SqLac049E53aysv0oEFD2kHfejeKU+ZqL2bcFWj9gLAQ==}
