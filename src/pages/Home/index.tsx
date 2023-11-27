@@ -28,7 +28,15 @@ export function Home() {
 								value={userName}
 								onChange={(e) => setUserName(e.target.value)}
 							/>
-							<Button onClick={() => navigate(ROUTES.IN_GAME)}>COMEÇAR</Button>
+							<Button
+								onClick={() => {
+									if (userName) {
+										navigate(ROUTES.IN_GAME, { state: userName });
+									}
+								}}
+							>
+								COMEÇAR
+							</Button>
 							<Button
 								variant="secondary"
 								onClick={() => {

@@ -1,6 +1,7 @@
 import { createContext } from 'react';
 import { GameAnswerOptions, GameStage } from '../../@types';
 export interface CurrentGameInfo {
+	userName: string;
 	stage: GameStage;
 	round: number;
 }
@@ -11,7 +12,6 @@ export interface GameHistory {
 	correctAnswer: GameAnswerOptions;
 	wrongAttempts: GameAnswerOptions[];
 }
-
 export interface GameContextProps {
 	history: GameHistory[];
 	currentGameInfo: CurrentGameInfo;

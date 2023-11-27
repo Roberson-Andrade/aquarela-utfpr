@@ -3,6 +3,7 @@ import { Home } from './pages/Home';
 import { ROUTES } from './utils/router';
 import { InGame } from './pages/InGame';
 import { GameContextProvider } from './contexts/GameContext/GameContextProvider';
+import { Reports } from './pages/Reports';
 
 export const router = createBrowserRouter([
 	{
@@ -11,7 +12,7 @@ export const router = createBrowserRouter([
 	},
 	{
 		path: ROUTES.REPORTS,
-		element: <div>relatorios</div>,
+		element: <Reports />,
 	},
 	{
 		path: ROUTES.IN_GAME,

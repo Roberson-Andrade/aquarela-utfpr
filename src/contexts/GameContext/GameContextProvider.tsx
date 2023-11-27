@@ -2,15 +2,19 @@ import { ReactNode, useCallback, useMemo, useState } from 'react';
 import { GameStage } from '../../@types';
 import { CurrentGameInfo, GameContext, GameContextProps, GameHistory } from './context';
 import { MAX_ROUNDS } from '../../constants';
+import { useLocation } from 'react-router-dom';
 
 interface GameContextProviderProps {
 	children: ReactNode;
 }
 
 export function GameContextProvider({ children }: GameContextProviderProps) {
+	const { state: userName } = useLocation();
+
 	const [currentGameInfo, setCurrentGameInfo] = useState<CurrentGameInfo>({
 		stage: GameStage.STAGE_ONE,
 		round: 1,
+		userName,
 	});
 	const [history, setHistory] = useState<GameHistory[]>([]);
 
@@ -33,10 +37,11 @@ export function GameContextProvider({ children }: GameContextProviderProps) {
 	}, []);
 
 	function changeGameStage(stage: GameStage) {
-		setCurrentGameInfo({
+		setCurrentGameInfo((prevState) => ({
+			...prevState,
 			round: 1,
 			stage,
-		});
+		}));
 	}
 
 	const value = useMemo<GameContextProps>(
