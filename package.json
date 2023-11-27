@@ -1,6 +1,6 @@
 {
   "name": "aquarela-utfpr",
-  "version": "0.0.0",
+  "version": "1.0.0",
   "type": "module",
   "scripts": {
     "dev": "vite --open",
@@ -9,10 +9,15 @@
     "preview": "vite preview"
   },
   "dependencies": {
+    "@phosphor-icons/react": "^2.0.14",
     "react": "^18.2.0",
-    "react-dom": "^18.2.0"
+    "react-beautiful-dnd": "^13.1.1",
+    "react-dom": "^18.2.0",
+    "react-router-dom": "^6.18.0",
+    "tailwind-variants": "^0.1.18"
   },
   "devDependencies": {
+    "@types/react-beautiful-dnd": "^13.1.7",
     "@types/react": "^18.2.15",
     "@types/react-dom": "^18.2.7",
     "@typescript-eslint/eslint-plugin": "^6.0.0",
