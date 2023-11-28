@@ -1,6 +1,7 @@
 import { GameAnswerOptions, GameStage } from '../@types';
 
 export const GAME_STAGE_NUMBER: Record<GameStage, number> = {
+	[GameStage.TUTORIAL]: 0,
 	[GameStage.STAGE_ONE]: 1,
 	[GameStage.STAGE_TWO]: 2,
 	[GameStage.DONE]: 3,
