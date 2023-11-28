@@ -5,9 +5,10 @@ import { useEffect, useState } from 'react';
 interface PlayAudioTextProperties {
 	text: string;
 	svgProps?: IconProps;
+	className?: string;
 }
 
-export function PlayAudioText({ text, svgProps }: PlayAudioTextProperties) {
+export function PlayAudioText({ text, svgProps, className }: PlayAudioTextProperties) {
 	const [utterance, setUtterance] = useState<SpeechSynthesisUtterance | null>(null);
 
 	useEffect(() => {
@@ -36,7 +37,9 @@ export function PlayAudioText({ text, svgProps }: PlayAudioTextProperties) {
 	return (
 		<IconButton
 			onClick={() => handlePlay()}
-			className='"hover:bg-gray-300 rounded-full active:bg-gray-400 transition-colors rounded-full"'
+			className={`hover:bg-gray-300 rounded-full active:bg-gray-400 transition-colors ${
+				className ?? ''
+			}`}
 		>
 			<SpeakerHigh {...svgProps} />
 		</IconButton>

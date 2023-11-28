@@ -4,11 +4,13 @@ import { GameDone } from './components/GameDone';
 import { InGameHeader } from './components/InGameHeader';
 import { StageOne } from './components/Stages/StageOne';
 import { StageTwo } from './components/Stages/StageTwo';
+import { Tutorial } from './components/Stages/Tutorial';
 
 export function InGame() {
 	const { currentGameInfo } = useGameContext();
 
 	const stages = {
+		[GameStage.TUTORIAL]: Tutorial,
 		[GameStage.STAGE_ONE]: StageOne,
 		[GameStage.STAGE_TWO]: StageTwo,
 		[GameStage.DONE]: GameDone,

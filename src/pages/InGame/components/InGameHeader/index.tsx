@@ -7,6 +7,7 @@ import { Modal } from '../../../../components/Modal';
 import { Button } from '../../../../components/Button';
 import { useNavigate } from 'react-router-dom';
 import { ROUTES } from '../../../../utils/router';
+import { GameStage } from '../../../../@types';
 
 export function InGameHeader() {
 	const { currentGameInfo } = useGameContext();
@@ -17,14 +18,21 @@ export function InGameHeader() {
 		<>
 			<header className="w-full flex items-center justify-between p-6 ">
 				<div className="flex items-center text-2xl">
-					<p className="mb-1">FASE {GAME_STAGE_NUMBER[currentGameInfo.stage]}</p> <CaretRight />{' '}
-					<p className="mb-1">RODADA {currentGameInfo.round}</p>
+					{currentGameInfo.stage === GameStage.TUTORIAL ? (
+						<p className="mb-1">TUTORIAL</p>
+					) : (
+						<>
+							<p className="mb-1">FASE {GAME_STAGE_NUMBER[currentGameInfo.stage]}</p> <CaretRight />{' '}
+							<p className="mb-1">RODADA {currentGameInfo.round}</p>
+						</>
+					)}
 				</div>
 
 				<IconButton onClick={() => setOpen(true)}>
 					<House size={28} />
 				</IconButton>
 			</header>
+
 			<Modal
 				open={open}
 				title="IR PARA O MENU"

@@ -12,7 +12,7 @@ export function GameContextProvider({ children }: GameContextProviderProps) {
 	const { state: userName } = useLocation();
 
 	const [currentGameInfo, setCurrentGameInfo] = useState<CurrentGameInfo>({
-		stage: GameStage.STAGE_ONE,
+		stage: GameStage.TUTORIAL,
 		round: 1,
 		userName,
 	});

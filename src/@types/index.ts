@@ -1,4 +1,5 @@
 export enum GameStage {
+	TUTORIAL = 'TUTORIAL',
 	STAGE_ONE = 'STAGE_ONE',
 	STAGE_TWO = 'STAGE_TWO',
 	DONE = 'DONE',
