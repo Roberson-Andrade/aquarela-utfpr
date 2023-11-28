@@ -1,18 +1,17 @@
-import { SpeakerHigh } from '@phosphor-icons/react';
-import { ButtonHTMLAttributes, ReactNode } from 'react';
-import { IconButton } from '../../../../../../../components/IconButton';
+import { ButtonHTMLAttributes } from 'react';
 import { alternative } from './styles';
 import { VariantProps } from 'tailwind-variants';
+import { PlayAudioText } from '../../../../../../../components/PlayAudioText';
 
 interface AlternativeButtonProperties
 	extends VariantProps<typeof alternative>,
 		ButtonHTMLAttributes<HTMLButtonElement> {
-	children: ReactNode;
+	text: string;
 	hasUserMistaken?: boolean;
 }
 
 export function AlternativeButton({
-	children,
+	text,
 	hasUserMistaken,
 	isRightAnswer,
 	colorValue,
@@ -28,12 +27,10 @@ export function AlternativeButton({
 				disabled={hasUserMistaken}
 				{...props}
 			>
-				{children}
+				{text}
 			</button>
 
-			<IconButton>
-				<SpeakerHigh />
-			</IconButton>
+			<PlayAudioText text={text} />
 		</div>
 	);
 }

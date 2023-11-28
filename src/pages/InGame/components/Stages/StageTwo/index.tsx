@@ -6,6 +6,7 @@ import { useGameContext } from '../../../../../contexts/GameContext/useGameConte
 import { getOptions } from '../../../../../utils/getRandomOption';
 import { MAX_ROUNDS, STAGE_TWO_OPTIONS } from '../../../../../constants';
 import { Button } from '../../../../../components/Button';
+import { PlayAudioText } from '../../../../../components/PlayAudioText';
 export function StageTwo() {
 	const { currentGameInfo, goToNextRound, addHistory, changeStage } = useGameContext();
 
@@ -75,7 +76,10 @@ export function StageTwo() {
 	return (
 		<DragDropContext onDragEnd={handleDragEnd}>
 			<section className="w-full h-full flex flex-col items-center gap-8 px-8">
-				<h1 className="text-3xl">ARRASTE E SOLTE OS OBJETOS EM SUAS CAIXAS PELA SUA COR</h1>
+				<h1 className="text-3xl flex items-center gap-4">
+					ARRASTE E SOLTE OS OBJETOS EM SUAS CAIXAS PELA SUA COR{' '}
+					<PlayAudioText text="ARRASTE E SOLTE OS OBJETOS EM SUAS CAIXAS PELA SUA COR" />
+				</h1>
 
 				<div className="w-full flex justify-center gap-8">
 					{Object.entries(containers)
@@ -91,6 +95,12 @@ export function StageTwo() {
 					items={containers.BACKLOG}
 					className="w-full flex gap-4 "
 				/>
+
+				{containers.BACKLOG.length === 0 && (
+					<h6 className="text-2xl">
+						VOCÊ ACERTOU! <PlayAudioText text="VOCÊ ACERTOU!" />
+					</h6>
+				)}
 
 				{containers.BACKLOG.length === 0 && (
 					<Button onClick={handleClickNextRound}>PRÓXIMA RODADA</Button>

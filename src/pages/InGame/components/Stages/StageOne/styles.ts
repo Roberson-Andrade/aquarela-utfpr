@@ -2,7 +2,7 @@ import { tv } from 'tailwind-variants';
 import { GameAnswerOptions } from '../../../../../@types';
 
 export const stageOneQuestion = tv({
-	base: 'flex w-full justify-center py-16 text-white text-3xl text-center',
+	base: 'flex w-full justify-center py-16 text-white text-3xl text-center items-center gap-4',
 	variants: {
 		answer: {
 			[GameAnswerOptions.BLUE]: 'bg-[blue]',
